@@ -15,7 +15,7 @@ It contans data about the three tables and how they interact with each other.
     This will run on port [http://localhost:3000]
 
 ## VIDEO LINK
-Here is the link [Heroes][video]()
+Here is the link [Heroes][video](https://watch.screencastify.com/v/sByMfImgq3z3R16rzRyM)
 
 
 * Database creation
@@ -64,11 +64,11 @@ Here is the link [Heroes][video]()
 
     Each resource has it own specific routes as specified in the ./configroutes.rb folder .
     
-     Heroes routes; resources :pizzas, only: [:index, :create]
+     Heroes routes; resources : heroes
 
-     Hero_powers routes; resources :restaurants, only: [:index, :show, :destroy, :create]
+     Hero_powers routes; resources : hero_powers
     
-     Powers routes; resources :restaurant_pizzas, only: [:create, :index, :destroy]
+     Powers routes; resources : powers
 
 
 

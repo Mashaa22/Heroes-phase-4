@@ -4,7 +4,7 @@ class PowersController < ApplicationController
     end
 
     def create
-        power = Power.create!(power_params)
+        power = Power.create(power_params)
         render json: power, status: :created
     end
 
@@ -21,7 +21,7 @@ class PowersController < ApplicationController
     private
 
     def power_description_params
-        params.permit(:id, :description)
+        params.permit(:id, :name, :description)
     end
 
     def power_params
