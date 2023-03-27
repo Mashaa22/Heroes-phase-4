@@ -1,26 +1,76 @@
-# README
+# PIZZA_RESTAURANT API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is Heroes API.
+It contans data about the three tables and how they interact with each other.
 
-Things you may want to cover:
 
-* Ruby version
+### Things you may want to cover when running the application:
+
+* Ruby version (2.7.4)
 
 * System dependencies
 
-* Configuration
+    Run $ bundle install to get the depencaies for the application.
+    To run the back end server run $ rails s.
+    This will run on port [http://localhost:3000]
+
+## VIDEO LINK
+Here is the link [Heroes][video]()
+
 
 * Database creation
 
+    The Database was created using db diagram out of preferrences.
+    To view the ERD diagram click the link below:
+
+
 * Database initialization
+
+    For the Database we have three tables namely; Heroes, powers and hero_powers.
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+    There are no tests for this application currently.
+
 
 * Deployment instructions
 
-* ...
-# Heroes
-# Heroes
+(not yet deployed at the moment.)
+
+## API Creation Proccess
+
+* Creating a new Rails API
+
+    Firstly  we run the following command to create a new rails api:
+    $ rails new Heroes --api --minimal
+
+* Generating the required Resources
+
+    Run the following commands to generate the three resources
+
+    1. $ rails g resource Heroes name --no-test-framework
+    2. $ rails g resource power --no-test-framework
+    3. $ rails g resource hero_powers --no-test-framework
+
+* Model Relationships
+
+    - A `Hero` has many `powers`s through `hero_powers`
+
+    - A `power` has many `heroes` through `hero_powers`
+
+    - A `hero_power` belongs to a `hero` and belongs to a `power`
+
+## ROUTES
+
+    Each resource has it own specific routes as specified in the ./configroutes.rb folder .
+    
+     Heroes routes; resources :pizzas, only: [:index, :create]
+
+     Hero_powers routes; resources :restaurants, only: [:index, :show, :destroy, :create]
+    
+     Powers routes; resources :restaurant_pizzas, only: [:create, :index, :destroy]
+
+
+
+
+

@@ -1,6 +1,10 @@
 class HeroPowersController < ApplicationController
+    def index
+        render json: HeroPower.all
+    end
+
     def create
-        hero_power = HeroPower.create!(hero_powers_params)
+        hero_power = HeroPower.create(hero_powers_params)
         render json: hero_power.hero, serializer: AssociationSerializer ,status: :created
     end
 
